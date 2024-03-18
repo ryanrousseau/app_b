@@ -29,7 +29,7 @@ step "deploy-an-aws-cloudformation-template" {
         packages {
             acquisition_location = "Server"
             feed = "octopus-server-built-in"
-            package_id = "EKS_Template.Infrastructure"
+            package_id = "App_B.Infrastructure"
             properties = {
                 SelectionMode = "immediate"
             }
@@ -40,7 +40,7 @@ step "deploy-an-aws-cloudformation-template" {
 step "deploy-kubernetes-yaml" {
     name = "Deploy Kubernetes YAML"
     properties = {
-        Octopus.Action.TargetRoles = "app-template"
+        Octopus.Action.TargetRoles = "app-b"
     }
 
     action {
